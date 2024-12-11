@@ -11,7 +11,7 @@
                 "--directory",
                 "D:/workspace/mcp/mcp-crash-course/server/weather",
                 "run",
-                "server.py"
+                "sse.py"
             ]
         }
     }

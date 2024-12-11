@@ -6,7 +6,6 @@
 """
 import logging
 from typing import Any
-import asyncio
 import httpx
 from mcp.server.models import InitializationOptions
 import mcp.types as types
@@ -202,7 +201,7 @@ async def handle_call_tool(
 
 
 async def main():
-    logger.info("run weather server...")
+    logger.info(f"run {server.name}...")
     # Run the server using stdin/stdout streams
     async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
         await server.run(
@@ -221,4 +220,8 @@ async def main():
 
 # This is needed if you'd like to connect to a custom client
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+    import asyncio
+
     asyncio.run(main())
