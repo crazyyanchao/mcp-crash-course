@@ -9,8 +9,8 @@ from mcp.client.stdio import stdio_client
 
 # 创建服务器参数以连接到STDIO
 server_params = StdioServerParameters(
-    command="python",  # 可执行文件
-    args=["example_server.py"],  # 可选的命令行参数
+    command="uv",
+    args=["run", "server.py"],  # 可选的命令行参数
     env=None  # 可选的环境变量
 )
 
